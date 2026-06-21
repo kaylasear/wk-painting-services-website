@@ -1,0 +1,47 @@
+---
+import LogoMark from './LogoMark.astro';
+import { SITE } from '../config/site';
+---
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">
+          <LogoMark />
+          {SITE.name}
+        </div>
+        <p class="tag">Exterior home painting for the Tacoma area — siding, trim, doors, and decks. Interior and cabinet work also available. Licensed, bonded, and locally owned.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/residential-painting">Residential Painting</a></li>
+          <li><a href="/#services">Interior Painting</a></li>
+          <li><a href="/#services">Cabinet Refinishing</a></li>
+          <li><a href="/#services">Commercial Painting</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/reviews">Reviews</a></li>
+          <li><a href="/#process">Our Process</a></li>
+          <li><a href="/#gallery">Color Library</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href={SITE.phoneHref}>{SITE.phone}</a></li>
+          <li><a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
+          <li>{SITE.hours}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 {SITE.name}. All rights reserved.</span>
+      <span>Placeholder contact details for demo purposes.</span>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,16 @@
+---
+export interface Props {
+  eyebrow: string;
+  heading: string;
+  body: string;
+}
+const { eyebrow, heading, body } = Astro.props;
+---
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">{eyebrow}</p>
+    <h1 set:html={heading} />
+    <p>{body}</p>
+    <slot />
+  </div>
+</section>

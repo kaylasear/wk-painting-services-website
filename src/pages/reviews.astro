@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TopNav from '../components/TopNav.astro';
+import Header from '../components/Header.astro';
+import Reviews from '../components/Reviews.astro';
+import Footer from '../components/Footer.astro';
+import MobileCTA from '../components/MobileCTA.astro';
+import PageHero from '../components/PageHero.astro';
+import PageCTA from '../components/PageCTA.astro';
+import { SITE } from '../config/site';
+
+const ratingSummary = [
+  { value: "4.9", label: "Average rating" },
+  { value: "300+", label: "Five-star reviews" },
+  { value: "14 yrs", label: "Serving the South Sound" },
+];
+---
+<Layout
+  title={`Customer Reviews | ${SITE.name}`}
+  description="See what Tacoma and South Sound homeowners say about WK Painting Services. 300+ five-star reviews."
+>
+  <TopNav currentPage="reviews" />
+  <Header />
+
+  <PageHero
+    eyebrow="Customer Reviews"
+    heading="What the South Sound<br />is saying."
+    body="Over 300 five-star reviews from homeowners in Tacoma, Gig Harbor, Puyallup, and beyond. Here's a sample of what our clients say after we wrap up."
+  />
+
+  <div class="rating-summary">
+    <div class="wrap">
+      <div class="rating-summary-inner">
+        {ratingSummary.map(s => (
+          <div class="rating-stat">
+            <strong>{s.value}</strong>
+            <span>{s.label}</span>
+          </div>
+        ))}
+      </div>
+      <div class="rating-stars">★★★★★</div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="wrap">
+      <Reviews />
+    </div>
+  </section>
+
+  <PageCTA
+    variant="dark"
+    eyebrow="Get Started"
+    heading="Ready to be our next happy customer?"
+    body="Free estimate, color consult included, no pressure. We'll have a quote to you within one business day."
+  >
+    <a href={SITE.estimateHref} class="btn btn-cta">Request a Free Estimate</a>
+  </PageCTA>
+
+  <Footer />
+  <MobileCTA />
+</Layout>

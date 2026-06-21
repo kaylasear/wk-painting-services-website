@@ -1,0 +1,19 @@
+---
+import { SITE } from '../config/site';
+---
+<section class="warranty">
+  <div class="wrap warranty-inner">
+    <div class="warranty-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/>
+        <path d="M9 12l2 2 4-4"/>
+      </svg>
+      <span>2-Year<br />Warranty</span>
+    </div>
+    <div>
+      <h2>Backed by a 2-year limited warranty.</h2>
+      <p>Every exterior project from {SITE.name} is covered for two years against peeling, blistering, and cracking — no fine print, no runaround.</p>
+    </div>
+    <a href={SITE.estimateHref} class="btn btn-cta">Get a Free Estimate</a>
+  </div>
+</section>
