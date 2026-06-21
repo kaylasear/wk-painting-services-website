@@ -1,0 +1,50 @@
+---
+export interface Props {
+  limit?: number;
+}
+const { limit } = Astro.props;
+
+const allReviews = [
+  {
+    text: "Our full exterior repaint was done in three days, and they covered every plant in the yard before starting. Came home to a clean driveway every night.",
+    name: "Sarah M.",
+    location: "Proctor District",
+  },
+  {
+    text: "They scraped and primed spots I didn't even realize were a problem before painting. Two years later the siding still looks brand new.",
+    name: "James T.",
+    location: "North Tacoma",
+  },
+  {
+    text: "Got our deck stained and the trim repainted in the same visit. The estimate matched the final invoice exactly, which I wasn't expecting.",
+    name: "Dana R.",
+    location: "Gig Harbor",
+  },
+  {
+    text: "From the color consult to the final walkthrough, everything was professional and on schedule. The crew cleaned up every evening — no mess left behind.",
+    name: "Marcus L.",
+    location: "University Place",
+  },
+  {
+    text: "We had a tricky split-level with lots of trim detail. WK took the time to mask everything perfectly. The result looks better than when the house was new.",
+    name: "Theresa K.",
+    location: "Puyallup",
+  },
+  {
+    text: "Called on a Tuesday, had an estimate Thursday, paint done the following week. Fast, fair price, and they even touched up a spot I noticed after they left.",
+    name: "Brian O.",
+    location: "Lakewood",
+  },
+];
+
+const reviews = limit ? allReviews.slice(0, limit) : allReviews;
+---
+<div class="rev-grid">
+  {reviews.map(r => (
+    <div class="rev-card fade-up">
+      <div class="rev-stars">★★★★★</div>
+      <p>"{r.text}"</p>
+      <div class="rev-name">{r.name} — {r.location}</div>
+    </div>
+  ))}
+</div>

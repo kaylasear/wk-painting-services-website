@@ -1,0 +1,19 @@
+---
+export interface Props {
+  heading: string;
+  body: string;
+  variant?: "cta" | "dark";
+  eyebrow?: string;
+}
+const { heading, body, variant = "cta", eyebrow } = Astro.props;
+---
+<section class={`page-cta page-cta--${variant}`}>
+  <div class="wrap">
+    {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+    <h2>{heading}</h2>
+    <p>{body}</p>
+    <div class="page-cta-actions">
+      <slot />
+    </div>
+  </div>
+</section>

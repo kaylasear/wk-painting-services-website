@@ -1,0 +1,19 @@
+---
+export interface Props {
+  currentPage?: string;
+}
+const { currentPage = "" } = Astro.props;
+---
+<div class="topnav">
+  <div class="topnav-inner">
+    <nav class="topnav-links">
+      <a href="/residential-painting" class={currentPage === "residential" ? "active" : ""}>Residential Painting</a>
+      <a href="/reviews" class={currentPage === "reviews" ? "active" : ""}>Reviews</a>
+      <a href="/about" class={currentPage === "about" ? "active" : ""}>About</a>
+    </nav>
+    <div class="topnav-contact">
+      <span>Mon–Sat, 7am–6pm</span>
+      <a href="tel:12535550148">(253) 555-0148</a>
+    </div>
+  </div>
+</div>
