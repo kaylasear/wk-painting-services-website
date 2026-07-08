@@ -1,12 +1,12 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import TopNav from '../components/TopNav.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import MobileCTA from '../components/MobileCTA.astro';
-import PageHero from '../components/PageHero.astro';
-import PageCTA from '../components/PageCTA.astro';
-import { SITE } from '../config/site';
+import Layout from "../layouts/Layout.astro";
+import TopNav from "../components/TopNav.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import MobileCTA from "../components/MobileCTA.astro";
+import PageHero from "../components/PageHero.astro";
+import PageCTA from "../components/PageCTA.astro";
+import { SITE } from "../config/site";
 
 const stats = [
   { value: "2012", label: "Year founded" },
@@ -35,10 +35,19 @@ const values = [
 ];
 
 const serviceArea = [
-  "Tacoma", "Gig Harbor", "Puyallup", "Lakewood", "University Place",
-  "Federal Way", "Auburn", "Sumner", "Fife", "Milton",
+  "Tacoma",
+  "Gig Harbor",
+  "Puyallup",
+  "Lakewood",
+  "University Place",
+  "Federal Way",
+  "Auburn",
+  "Sumner",
+  "Fife",
+  "Milton",
 ];
 ---
+
 <Layout
   title={`About Us | ${SITE.name}`}
   description={`${SITE.name} is a locally owned exterior painting company serving Tacoma and the South Sound since 2012. Licensed, bonded, and dedicated to quality prep.`}
@@ -59,33 +68,56 @@ const serviceArea = [
           <p class="eyebrow">Our story</p>
           <h2>Started in Tacoma, still in Tacoma.</h2>
           <p class="story-body">
-            WK Painting Services started with a single truck and a belief that prep work — not paint brand — is what makes a job last. The South Sound is hard on paint: the rain, the humidity, the temperature swings. Most paint failures aren't because the paint was cheap; they're because the surface wasn't ready.
+            WK Painting Services started with a single truck and a belief that
+            prep work — not paint brand — is what makes a job last. The South
+            Sound is hard on paint: the rain, the humidity, the temperature
+            swings. Most paint failures aren't because the paint was cheap;
+            they're because the surface wasn't ready.
           </p>
           <p class="story-body">
-            Over 14 years, we've painted more than 1,200 homes across Tacoma, Gig Harbor, Puyallup, Lakewood, and University Place. We've kept the same approach the whole time: show up on time, do thorough prep, use quality materials, and don't leave until the client does a walkthrough and is satisfied.
+            Over 14 years, we've painted more than 1,200 homes across Tacoma,
+            Gig Harbor, Puyallup, Lakewood, and University Place. We've kept the
+            same approach the whole time: show up on time, do thorough prep, use
+            quality materials, and don't leave until the client does a
+            walkthrough and is satisfied.
           </p>
           <p class="story-body">
-            We're licensed and bonded in Washington State, and every project comes with a 2-year workmanship warranty — not because we have to, but because we're confident in the work.
+            We're licensed and bonded in Washington State, and every project
+            comes with a 2-year workmanship warranty — not because we have to,
+            but because we're confident in the work.
           </p>
         </div>
         <div class="fade-up">
           <div class="stat-mini-grid">
-            {stats.map(s => (
-              <div class="stat-mini">
-                <strong>{s.value}</strong>
-                <span>{s.label}</span>
-              </div>
-            ))}
+            {
+              stats.map((s) => (
+                <div class="stat-mini">
+                  <strong>{s.value}</strong>
+                  <span>{s.label}</span>
+                </div>
+              ))
+            }
           </div>
           <div class="license-badge">
             <div class="license-badge-top">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFC629" stroke-width="2">
-                <path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/>
-                <path d="M9 12l2 2 4-4"/>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#FFC629"
+                stroke-width="2"
+              >
+                <path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"
+                ></path>
+                <path d="M9 12l2 2 4-4"></path>
               </svg>
               <strong>Licensed &amp; bonded in Washington State</strong>
             </div>
-            <p>WA contractor license #WKPAI*123AB. Fully insured — general liability and workers' compensation on every job.</p>
+            <p>
+              WA contractor license #WKPAI*123AB. Fully insured — general
+              liability and workers' compensation on every job.
+            </p>
           </div>
         </div>
       </div>
@@ -94,17 +126,22 @@ const serviceArea = [
 
   <section class="section section-soft">
     <div class="wrap">
-      <div class="section-head fade-up" style="margin-left:auto;margin-right:auto;text-align:center;">
+      <div
+        class="section-head fade-up"
+        style="margin-left:auto;margin-right:auto;text-align:center;"
+      >
         <p class="eyebrow" style="justify-content:center;">How we work</p>
         <h2>The things we won't cut corners on.</h2>
       </div>
       <div class="svc-grid" style="grid-template-columns:repeat(2,1fr);">
-        {values.map(v => (
-          <div class="svc-card fade-up">
-            <h3>{v.title}</h3>
-            <p>{v.desc}</p>
-          </div>
-        ))}
+        {
+          values.map((v) => (
+            <div class="svc-card fade-up">
+              <h3>{v.title}</h3>
+              <p>{v.desc}</p>
+            </div>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -114,12 +151,12 @@ const serviceArea = [
       <div class="section-head fade-up">
         <p class="eyebrow">Service area</p>
         <h2>We serve the South Sound.</h2>
-        <p>Based in Tacoma — we travel to wherever your home is in the region.</p>
+        <p>
+          Based in Tacoma — we travel to wherever your home is in the region.
+        </p>
       </div>
       <div class="area-grid">
-        {serviceArea.map(city => (
-          <div class="area-chip">{city}</div>
-        ))}
+        {serviceArea.map((city) => <div class="area-chip">{city}</div>)}
       </div>
     </div>
   </section>
@@ -138,9 +175,16 @@ const serviceArea = [
 </Layout>
 
 <style>
-  .story-body { margin-top: 16px; font-size: 16px; color: var(--ink-soft); line-height: 1.7; }
+  .story-body {
+    margin-top: 16px;
+    font-size: 16px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
 
-  @media(max-width:760px) {
-    .svc-grid[style] { grid-template-columns: 1fr !important; }
+  @media (max-width: 760px) {
+    .svc-grid[style] {
+      grid-template-columns: 1fr !important;
+    }
   }
 </style>

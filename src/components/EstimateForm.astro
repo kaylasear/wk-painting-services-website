@@ -1,23 +1,51 @@
 ---
+
 ---
+
 <section class="section estimate" id="estimate">
   <div class="wrap">
     <div class="est-grid">
       <div>
         <p class="eyebrow">Get Started</p>
-        <h2>Request your free exterior estimate.</h2>
-        <p class="lede">Tell us a bit about your home's exterior. We'll call or email within one business day to schedule a walkthrough.</p>
+        <h2>Request your free estimate.</h2>
+        <p class="lede">
+          Tell us a bit about your project. We'll call or email within one
+          business day to schedule a walkthrough.
+        </p>
         <ul class="est-points">
           <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              ><path d="M9 11l3 3L22 4"></path><path
+                d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"
+              ></path></svg
+            >
             No-pressure, written estimate
           </li>
           <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              ><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"
+              ></path></svg
+            >
             Usually scheduled within 2–3 days
           </li>
           <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              ><path
+                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"
+              ></path></svg
+            >
             Color consult included, always
           </li>
         </ul>
@@ -41,7 +69,13 @@
           </div>
           <div class="field">
             <label for="address">Property address</label>
-            <input id="address" name="address" type="text" placeholder="Street, city" required />
+            <input
+              id="address"
+              name="address"
+              type="text"
+              placeholder="Street, city"
+              required
+            />
           </div>
           <div class="est-row">
             <div class="field">
@@ -49,8 +83,7 @@
               <select id="project" name="project">
                 <option>Exterior painting</option>
                 <option>Interior painting</option>
-                <option>Cabinet refinishing</option>
-                <option>Commercial painting</option>
+                <option>Cabinet painting</option>
                 <option>Not sure yet</option>
               </select>
             </div>
@@ -66,17 +99,35 @@
           </div>
           <div class="field">
             <label for="details">Project details</label>
-            <textarea id="details" name="details" placeholder="Rooms, square footage, anything we should know"></textarea>
+            <textarea
+              id="details"
+              name="details"
+              placeholder="Rooms, square footage, anything we should know"
+            ></textarea>
           </div>
-          <button type="submit" class="btn btn-cta">Request My Free Estimate</button>
-          <p class="form-note">By submitting, you agree to be contacted about your estimate. No spam, ever.</p>
+          <button type="submit" class="btn btn-cta"
+            >Request My Free Estimate</button
+          >
+          <p class="form-note">
+            By submitting, you agree to be contacted about your estimate. No
+            spam, ever.
+          </p>
         </form>
         <div id="formSuccess">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-            <circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/>
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+          >
+            <circle cx="12" cy="12" r="10"></circle><path d="M8 12l3 3 5-6"
+            ></path>
           </svg>
           <h3>Request received</h3>
-          <p>Thanks — a member of the WK Painting Services, LLC team will reach out within one business day to schedule your walkthrough.</p>
+          <p>
+            Thanks — a member of the WK Painting Services, LLC team will reach
+            out within one business day to schedule your walkthrough.
+          </p>
         </div>
       </div>
     </div>
@@ -84,13 +135,13 @@
 </section>
 
 <script>
-  const form = document.getElementById('estimateForm') as HTMLFormElement;
-  const success = document.getElementById('formSuccess') as HTMLElement;
+  const form = document.getElementById("estimateForm") as HTMLFormElement;
+  const success = document.getElementById("formSuccess") as HTMLElement;
   if (form && success) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener("submit", (e) => {
       e.preventDefault();
-      form.style.display = 'none';
-      success.style.display = 'block';
+      form.style.display = "none";
+      success.style.display = "block";
     });
   }
 </script>

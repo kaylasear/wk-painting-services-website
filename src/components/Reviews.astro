@@ -39,12 +39,17 @@ const allReviews = [
 
 const reviews = limit ? allReviews.slice(0, limit) : allReviews;
 ---
+
 <div class="rev-grid">
-  {reviews.map(r => (
-    <div class="rev-card fade-up">
-      <div class="rev-stars">★★★★★</div>
-      <p>"{r.text}"</p>
-      <div class="rev-name">{r.name} — {r.location}</div>
-    </div>
-  ))}
+  {
+    reviews.map((r) => (
+      <div class="rev-card fade-up">
+        <div class="rev-stars">★★★★★</div>
+        <p>"{r.text}"</p>
+        <div class="rev-name">
+          {r.name} — {r.location}
+        </div>
+      </div>
+    ))
+  }
 </div>
