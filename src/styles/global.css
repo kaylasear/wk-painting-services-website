@@ -290,7 +290,7 @@ header {
   white-space: nowrap;
 }
 .logo .mark {
-  height: 56px;
+  height: 72px;
   width: auto;
   flex: none;
 }
@@ -414,6 +414,14 @@ header {
   border-radius: 14px;
   overflow: hidden;
   background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+}
+.room-illustration img {
+  width: 100%;
+  height: auto;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -980,10 +988,10 @@ footer {
   font-family: "Bricolage Grotesque";
   font-weight: 700;
   font-size: 18px;
-  margin-bottom: 14px;
+  margin-bottom: 18px;
 }
 .foot-logo .mark {
-  height: 48px;
+  height: 110px;
   width: auto;
 }
 footer p.tag {
