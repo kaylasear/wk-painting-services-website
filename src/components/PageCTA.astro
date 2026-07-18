@@ -7,6 +7,7 @@ export interface Props {
 }
 const { heading, body, variant = "cta", eyebrow } = Astro.props;
 ---
+
 <section class={`page-cta page-cta--${variant}`}>
   <div class="wrap">
     {eyebrow && <p class="eyebrow">{eyebrow}</p>}

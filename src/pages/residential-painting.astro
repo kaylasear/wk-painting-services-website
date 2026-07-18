@@ -1,12 +1,12 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import TopNav from '../components/TopNav.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import MobileCTA from '../components/MobileCTA.astro';
-import PageHero from '../components/PageHero.astro';
-import PageCTA from '../components/PageCTA.astro';
-import { SITE } from '../config/site';
+import Layout from "../layouts/Layout.astro";
+import TopNav from "../components/TopNav.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import MobileCTA from "../components/MobileCTA.astro";
+import PageHero from "../components/PageHero.astro";
+import PageCTA from "../components/PageCTA.astro";
+import { SITE } from "../config/site";
 
 const services = [
   {
@@ -59,17 +59,18 @@ const pricing = [
   { label: "Deck or fence stain", range: "$600 – $2,200" },
 ];
 ---
+
 <Layout
-  title={`Residential Painting | ${SITE.name}`}
-  description="Professional exterior and interior residential painting in Tacoma and the South Sound. Siding, trim, doors, decks, and more. Free estimates."
+  title={`Exterior Painting | ${SITE.name}`}
+  description="Professional exterior painting in Tacoma and the South Sound. Siding, trim, doors, decks, and more. Free estimates."
 >
   <TopNav currentPage="residential" />
   <Header />
 
   <PageHero
-    eyebrow="Residential Painting"
+    eyebrow="Exterior Painting"
     heading="Your home's exterior,<br />done right."
-    body="From full re-sides to a single front door — WK Painting Services handles every residential job with the same prep, same crew, and the same 2-year warranty."
+    body="From full re-sides to a single front door — WK Painting Services handles every exterior job with the same prep, same crew, and the same 2-year warranty."
   >
     <div class="hero-actions">
       <a href={SITE.estimateHref} class="btn btn-cta">Get a Free Estimate</a>
@@ -82,16 +83,28 @@ const pricing = [
       <div class="section-head fade-up">
         <p class="eyebrow">What we paint</p>
         <h2>Every surface, handled.</h2>
-        <p>We scope each project in detail so nothing gets missed — and every item is covered by the same workmanship warranty.</p>
+        <p>
+          We scope each project in detail so nothing gets missed — and every
+          item is covered by the same workmanship warranty.
+        </p>
       </div>
       <div class="svc-grid svc-grid--3col">
-        {services.map(s => (
-          <div class="svc-card fade-up">
-            <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" set:html={s.icon} />
-            <h3>{s.title}</h3>
-            <p>{s.desc}</p>
-          </div>
-        ))}
+        {
+          services.map((s) => (
+            <div class="svc-card fade-up">
+              <svg
+                class="svc-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                set:html={s.icon}
+              />
+              <h3>{s.title}</h3>
+              <p>{s.desc}</p>
+            </div>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -103,29 +116,44 @@ const pricing = [
           <p class="eyebrow">What's included</p>
           <h2>Every job includes these — not as add-ons.</h2>
           <ul class="checklist">
-            {included.map(item => (
-              <li>
-                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M9 11l3 3L22 4"/>
-                  <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
-                </svg>
-                {item}
-              </li>
-            ))}
+            {
+              included.map((item) => (
+                <li>
+                  <svg
+                    class="check-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M9 11l3 3L22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                  {item}
+                </li>
+              ))
+            }
           </ul>
         </div>
         <div class="fade-up">
           <div class="pricing-card">
             <p class="pricing-card-eyebrow">Pricing guide</p>
             <h3>Typical project ranges</h3>
-            {pricing.map(p => (
-              <div class="pricing-row">
-                <span>{p.label}</span>
-                <span>{p.range}</span>
-              </div>
-            ))}
-            <p class="pricing-note">Ranges vary by home size, siding condition, and paint selection. Free written estimate always provided before any work begins.</p>
-            <a href={SITE.estimateHref} class="btn btn-cta">Request a Free Estimate</a>
+            {
+              pricing.map((p) => (
+                <div class="pricing-row">
+                  <span>{p.label}</span>
+                  <span>{p.range}</span>
+                </div>
+              ))
+            }
+            <p class="pricing-note">
+              Ranges vary by home size, siding condition, and paint selection.
+              Free written estimate always provided before any work begins.
+            </p>
+            <a href={SITE.estimateHref} class="btn btn-cta"
+              >Request a Free Estimate</a
+            >
           </div>
         </div>
       </div>

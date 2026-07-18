@@ -1,52 +1,55 @@
 ---
+import { SITE } from "../config/site";
+
+const services = [
+  {
+    title: "Exterior Painting",
+    desc: "Siding, trim, doors, fascia, and decks — fully prepped, primed, and finished with paint rated for South Sound weather.",
+    icon: `<path d="M3 9l9-6 9 6"/><path d="M5 9v11h14V9"/><path d="M10 20v-6h4v6"/>`,
+  },
+  {
+    title: "Interior Painting",
+    desc: "Walls, trim, ceilings, and cabinetry, prepped and finished room by room.",
+    icon: `<path d="M3 21l4-1 11-11-3-3L4 17l-1 4z"/><path d="M14 6l3 3"/>`,
+  },
+  {
+    title: "Cabinet Painting",
+    desc: "Spray-finished cabinets that look replaced, not repainted.",
+    icon: `<rect x="4" y="3" width="16" height="18" rx="1"/><path d="M4 11h16"/><circle cx="8" cy="7" r="0.6" fill="currentColor"/><circle cx="8" cy="16" r="0.6" fill="currentColor"/>`,
+  },
+];
 ---
+
 <section class="section" id="services">
   <div class="wrap">
     <div class="section-head fade-up">
       <p class="eyebrow">Services</p>
-      <h2>Exterior painting is what we do best.</h2>
-      <p>We're built around one job done right: protecting and refreshing the outside of your home. Interior and cabinet work are available too, for clients who want one crew for the whole house.</p>
+      <h2>What we do.</h2>
+      <p>
+        Three services, one crew, the same careful prep and 2-year warranty on
+        every job.
+      </p>
     </div>
-    <div class="svc-grid">
-      <div class="svc-card svc-featured fade-up">
-        <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-          <path d="M3 9l9-6 9 6"/><path d="M5 9v11h14V9"/><path d="M10 20v-6h4v6"/>
-        </svg>
-        <div>
-          <h3>Exterior Painting <span class="badge">Our specialty</span></h3>
-          <p>Siding, trim, doors, fascia, and decks — fully prepped, primed, and finished with paint rated for South Sound weather.</p>
-        </div>
-        <a href="#estimate" class="btn btn-light">Get a Free Estimate</a>
-      </div>
+    <div class="svc-grid svc-grid--3col">
+      {
+        services.map((s) => (
+          <div class="svc-card fade-up">
+            <svg
+              class="svc-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              set:html={s.icon}
+            />
+            <h3>{s.title}</h3>
+            <p>{s.desc}</p>
+          </div>
+        ))
+      }
     </div>
-
-    <p class="svc-secondary-head">Also available</p>
-    <div class="svc-grid">
-      <div class="svc-card fade-up">
-        <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-          <path d="M3 21l4-1 11-11-3-3L4 17l-1 4z"/><path d="M14 6l3 3"/>
-        </svg>
-        <h3>Interior Painting</h3>
-        <p>Walls, trim, ceilings, and cabinetry, prepped and finished room by room.</p>
-      </div>
-      <div class="svc-card fade-up">
-        <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-          <rect x="4" y="3" width="16" height="18" rx="1"/><path d="M4 11h16"/>
-          <circle cx="8" cy="7" r="0.6" fill="currentColor"/>
-          <circle cx="8" cy="16" r="0.6" fill="currentColor"/>
-        </svg>
-        <h3>Cabinet Refinishing</h3>
-        <p>Spray-finished cabinets that look replaced, not repainted.</p>
-      </div>
-      <div class="svc-card fade-up">
-        <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-          <path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/>
-          <path d="M9 21v-6h6v6"/>
-          <path d="M9 11h.01M14 11h.01M9 15h.01M14 15h.01"/>
-        </svg>
-        <h3>Commercial Painting</h3>
-        <p>Off-hours scheduling for offices, retail, and multi-unit properties.</p>
-      </div>
+    <div style="margin-top:36px;text-align:center;">
+      <a href={SITE.estimateHref} class="btn btn-cta">Get a Free Estimate</a>
     </div>
   </div>
 </section>
