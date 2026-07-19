@@ -1,6 +1,7 @@
 ---
 import LogoMark from "./LogoMark.astro";
 import { SITE } from "../config/site";
+import { withBase } from "../utils/url";
 ---
 
 <footer>
@@ -11,26 +12,27 @@ import { SITE } from "../config/site";
           <LogoMark />
         </div>
         <p class="tag">
-          Exterior home painting for the Tacoma area — siding, trim, doors, and
-          decks. Interior and cabinet work also available. Licensed, bonded, and
-          locally owned.
+          Interior, exterior, and cabinet painting for Pierce County homes.
+          Family owned and locally operated since 2017.
         </p>
       </div>
       <div class="foot-col">
         <h4>Services</h4>
         <ul>
-          <li><a href="/residential-painting">Exterior Painting</a></li>
-          <li><a href="/#services">Interior Painting</a></li>
-          <li><a href="/#services">Cabinet Painting</a></li>
+          <li>
+            <a href={withBase("/residential-painting")}>Exterior Painting</a>
+          </li>
+          <li><a href={withBase("/#services")}>Interior Painting</a></li>
+          <li><a href={withBase("/#services")}>Cabinet Painting</a></li>
         </ul>
       </div>
       <div class="foot-col">
         <h4>Company</h4>
         <ul>
-          <li><a href="/about">About Us</a></li>
-          <li><a href="/reviews">Reviews</a></li>
-          <li><a href="/#process">Our Process</a></li>
-          <li><a href="/#gallery">Color Library</a></li>
+          <li><a href={withBase("/about")}>About Us</a></li>
+          <li><a href={withBase("/reviews")}>Reviews</a></li>
+          <li><a href={withBase("/#process")}>Our Process</a></li>
+          <li><a href={withBase("/#gallery")}>Color Library</a></li>
         </ul>
       </div>
       <div class="foot-col">
@@ -44,7 +46,6 @@ import { SITE } from "../config/site";
     </div>
     <div class="foot-bottom">
       <span>&copy; 2026 {SITE.name}. All rights reserved.</span>
-      <span>Placeholder contact details for demo purposes.</span>
     </div>
   </div>
 </footer>

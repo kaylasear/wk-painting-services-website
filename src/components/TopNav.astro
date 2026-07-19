@@ -1,5 +1,6 @@
 ---
 import { SITE } from "../config/site";
+import { withBase } from "../utils/url";
 
 export interface Props {
   currentPage?: string;
@@ -11,14 +12,18 @@ const { currentPage = "" } = Astro.props;
   <div class="topnav-inner">
     <nav class="topnav-links">
       <a
-        href="/residential-painting"
+        href={withBase("/residential-painting")}
         class={currentPage === "residential" ? "active" : ""}
         >Exterior Painting</a
       >
-      <a href="/reviews" class={currentPage === "reviews" ? "active" : ""}
-        >Reviews</a
+      <a
+        href={withBase("/reviews")}
+        class={currentPage === "reviews" ? "active" : ""}>Reviews</a
       >
-      <a href="/about" class={currentPage === "about" ? "active" : ""}>About</a>
+      <a
+        href={withBase("/about")}
+        class={currentPage === "about" ? "active" : ""}>About</a
+      >
     </nav>
     <div class="topnav-contact">
       <span>{SITE.hours}</span>
