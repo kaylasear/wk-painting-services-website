@@ -5,7 +5,7 @@ export const SITE = {
   phone: "(253) 906-1802",
   phoneHref: "tel:12539061802",
   email: "waynekhim@gmail.com",
-  estimateHref: withBase("/#estimate"),
+  estimateHref: withBase("/contact"),
   tagline: "Pierce County Exterior, Interior & Cabinet Painters",
   hours: "Mon–Sun, Always Open",
 } as const;

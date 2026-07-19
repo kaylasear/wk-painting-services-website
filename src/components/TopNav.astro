@@ -24,6 +24,10 @@ const { currentPage = "" } = Astro.props;
         href={withBase("/about")}
         class={currentPage === "about" ? "active" : ""}>About</a
       >
+      <a
+        href={withBase("/contact")}
+        class={currentPage === "contact" ? "active" : ""}>Contact</a
+      >
     </nav>
     <div class="topnav-contact">
       <span>{SITE.hours}</span>
