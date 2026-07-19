@@ -25,6 +25,10 @@ jobs:
           cache: npm
       - run: npm install
       - run: npm run build
+        env:
+          # Web3Forms access keys are meant to be client-visible (they end up in the built
+          # bundle); this secret only keeps the key out of git history, not out of the site.
+          PUBLIC_WEB3FORMS_KEY: ${{ secrets.PUBLIC_WEB3FORMS_KEY }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist

@@ -845,6 +845,21 @@ header {
   margin-top: 12px;
   text-align: center;
 }
+.form-error {
+  display: none;
+  font-size: 13px;
+  color: #d63b3b;
+  margin-top: 12px;
+  text-align: center;
+}
+.hp-field {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
 #formSuccess {
   display: none;
   text-align: center;

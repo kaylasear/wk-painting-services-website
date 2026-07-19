@@ -1,8 +1,8 @@
 ---
-
+import { PROJECT_TYPES, TIMELINE_OPTIONS } from "../config/constants";
 ---
 
-<section class="section estimate" id="estimate">
+<section class="section estimate">
   <div class="wrap">
     <div class="est-grid">
       <div>
@@ -53,6 +53,20 @@
 
       <div class="est-form">
         <form id="estimateForm">
+          <input
+            type="hidden"
+            name="access_key"
+            value={import.meta.env.PUBLIC_WEB3FORMS_KEY}
+          />
+          <input type="hidden" name="subject" value="New estimate request" />
+          <input type="hidden" name="from_name" value="WK Painting Services" />
+          <input
+            type="checkbox"
+            name="botcheck"
+            class="hp-field"
+            tabindex="-1"
+            autocomplete="off"
+          />
           <div class="est-row">
             <div class="field">
               <label for="name">Full name</label>
@@ -79,21 +93,15 @@
           </div>
           <div class="est-row">
             <div class="field">
-              <label for="project">Project type</label>
+              <label for="project">Project Type</label>
               <select id="project" name="project">
-                <option>Exterior painting</option>
-                <option>Interior painting</option>
-                <option>Cabinet painting</option>
-                <option>Not sure yet</option>
+                {PROJECT_TYPES.map((type) => <option>{type}</option>)}
               </select>
             </div>
             <div class="field">
               <label for="timeline">Timeline</label>
               <select id="timeline" name="timeline">
-                <option>As soon as possible</option>
-                <option>Within a month</option>
-                <option>1–3 months out</option>
-                <option>Just exploring options</option>
+                {TIMELINE_OPTIONS.map((option) => <option>{option}</option>)}
               </select>
             </div>
           </div>
@@ -112,6 +120,10 @@
             By submitting, you agree to be contacted about your estimate. No
             spam, ever.
           </p>
+          <p id="formError" class="form-error">
+            Something went wrong sending your request. Please try again, or call
+            us directly.
+          </p>
         </form>
         <div id="formSuccess">
           <svg
@@ -126,7 +138,7 @@
           <h3>Request received</h3>
           <p>
             Thanks — a member of the WK Painting Services, LLC team will reach
-            out within one business day to schedule your walkthrough.
+            out to schedule your walkthrough.
           </p>
         </div>
       </div>
@@ -137,11 +149,40 @@
 <script>
   const form = document.getElementById("estimateForm") as HTMLFormElement;
   const success = document.getElementById("formSuccess") as HTMLElement;
-  if (form && success) {
-    form.addEventListener("submit", (e) => {
+  const error = document.getElementById("formError") as HTMLElement;
+  const submitBtn = form?.querySelector(
+    'button[type="submit"]',
+  ) as HTMLButtonElement;
+
+  if (form && success && error && submitBtn) {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
-      form.style.display = "none";
-      success.style.display = "block";
+      error.style.display = "none";
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending…";
+
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(Object.fromEntries(new FormData(form))),
+        });
+        const result = await response.json();
+
+        if (result.success) {
+          form.style.display = "none";
+          success.style.display = "block";
+        } else {
+          throw new Error(result.message || "Submission failed");
+        }
+      } catch {
+        error.style.display = "block";
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Request My Free Estimate";
+      }
     });
   }
 </script>
