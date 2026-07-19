@@ -20,6 +20,16 @@ const services = [
     icon: `<rect x="2" y="3" width="20" height="4" rx="1"/><rect x="2" y="10" width="20" height="4" rx="1"/><rect x="2" y="17" width="20" height="4" rx="1"/>`,
   },
   {
+    title: "Gutters",
+    desc: "Repainting gutters prevents rust and keeps them blending seamlessly with your home's color scheme.",
+    icon: `<path d="M3 6h18"/><path d="M6 6v4a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V6"/><path d="M12 13v7"/><path d="M9 17l3 3 3-3"/>`,
+  },
+  {
+    title: "Shutters",
+    desc: "Whether decorative or functional, shutters get careful prep and coating to hold up against sun fade and moisture over time.",
+    icon: `<rect x="3" y="3" width="7" height="18" rx="1"/><rect x="14" y="3" width="7" height="18" rx="1"/>`,
+  },
+  {
     title: "Front Doors & Entries",
     desc: "A fresh door makes the whole house. We hand-paint for a factory-smooth finish and add weather-resistant topcoat to stand up to daily use.",
     icon: `<rect x="3" y="2" width="18" height="20" rx="1"/><circle cx="16" cy="12" r="1.5" fill="currentColor"/>`,
@@ -49,20 +59,12 @@ const included = [
   "Two finish coats of weather-rated exterior paint",
   "Daily cleanup — no tools, no tape left behind",
   "Final walkthrough with you before we close out",
-  "2-year workmanship warranty, in writing",
-];
-
-const pricing = [
-  { label: "Single-story exterior", range: "$2,400 – $4,800" },
-  { label: "Two-story exterior", range: "$4,500 – $9,000" },
-  { label: "Front door & entry", range: "$400 – $900" },
-  { label: "Deck or fence stain", range: "$600 – $2,200" },
 ];
 ---
 
 <Layout
   title={`Exterior Painting | ${SITE.name}`}
-  description="Professional exterior painting in Tacoma and the South Sound. Siding, trim, doors, decks, and more. Free estimates."
+  description="Professional exterior painting in Pierce County. Siding, trim, gutters, shutters, doors, and more. Free estimates."
 >
   <TopNav currentPage="residential" />
   <Header />
@@ -70,7 +72,7 @@ const pricing = [
   <PageHero
     eyebrow="Exterior Painting"
     heading="Your home's exterior,<br />done right."
-    body="From full re-sides to a single front door — WK Painting Services handles every exterior job with the same prep, same crew, and the same 2-year warranty."
+    body="From full re-sides to a single front door — WK Painting Services handles every exterior job with the same careful prep and the same experienced crew."
   >
     <div class="hero-actions">
       <a href={SITE.estimateHref} class="btn btn-cta">Get a Free Estimate</a>
@@ -84,8 +86,8 @@ const pricing = [
         <p class="eyebrow">What we paint</p>
         <h2>Every surface, handled.</h2>
         <p>
-          We scope each project in detail so nothing gets missed — and every
-          item is covered by the same workmanship warranty.
+          We scope each project in detail up front, so nothing gets missed once
+          work begins.
         </p>
       </div>
       <div class="svc-grid svc-grid--3col">
@@ -137,19 +139,11 @@ const pricing = [
         </div>
         <div class="fade-up">
           <div class="pricing-card">
-            <p class="pricing-card-eyebrow">Pricing guide</p>
-            <h3>Typical project ranges</h3>
-            {
-              pricing.map((p) => (
-                <div class="pricing-row">
-                  <span>{p.label}</span>
-                  <span>{p.range}</span>
-                </div>
-              ))
-            }
+            <p class="pricing-card-eyebrow">Free Estimate</p>
+            <h3>Get a written quote for your project</h3>
             <p class="pricing-note">
-              Ranges vary by home size, siding condition, and paint selection.
-              Free written estimate always provided before any work begins.
+              Every estimate is free and provided in writing before any work
+              begins — no obligation, no pressure.
             </p>
             <a href={SITE.estimateHref} class="btn btn-cta"
               >Request a Free Estimate</a

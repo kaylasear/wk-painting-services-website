@@ -1,10 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import TopNav from "../components/TopNav.astro";
-import PromoBar from "../components/PromoBar.astro";
 import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
-import Warranty from "../components/Warranty.astro";
 import Services from "../components/Services.astro";
 import Process from "../components/Process.astro";
 import Stats from "../components/Stats.astro";
@@ -13,14 +11,13 @@ import Reviews from "../components/Reviews.astro";
 import EstimateForm from "../components/EstimateForm.astro";
 import Footer from "../components/Footer.astro";
 import MobileCTA from "../components/MobileCTA.astro";
+import { withBase } from "../utils/url";
 ---
 
 <Layout>
   <TopNav currentPage="" />
-  <PromoBar />
   <Header />
   <Hero />
-  <Warranty />
   <Services />
   <Process />
   <Stats />
@@ -29,11 +26,11 @@ import MobileCTA from "../components/MobileCTA.astro";
     <div class="wrap">
       <div class="section-head fade-up">
         <p class="eyebrow">Reviews</p>
-        <h2>What the South Sound is saying.</h2>
+        <h2>What our customers are saying.</h2>
       </div>
       <Reviews limit={3} />
       <div style="margin-top:36px;text-align:center;">
-        <a href="/reviews" class="btn btn-ghost">See all reviews</a>
+        <a href={withBase("/reviews")} class="btn btn-ghost">See all reviews</a>
       </div>
     </div>
   </section>

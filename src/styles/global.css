@@ -165,27 +165,6 @@ button {
 }
 
 /* ---------- Promo bar ---------- */
-.promo-bar {
-  background: var(--cta);
-  color: #fff;
-}
-.promo-bar-inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  padding: 9px 28px;
-  font-size: 13.5px;
-  font-weight: 600;
-  flex-wrap: wrap;
-  text-align: center;
-}
-.promo-bar-inner a {
-  text-decoration: underline;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
 /* ---------- Top nav bar ---------- */
 .topnav {
   background: var(--ink);
@@ -459,64 +438,6 @@ header {
   color: var(--ink);
 }
 
-/* ---------- Warranty badge ---------- */
-.warranty {
-  background: var(--ink);
-  padding: 48px 0;
-}
-.warranty-inner {
-  display: flex;
-  align-items: center;
-  gap: 36px;
-  flex-wrap: wrap;
-}
-.warranty-badge {
-  flex: none;
-  width: 96px;
-  height: 96px;
-  border-radius: 50%;
-  background: var(--cta);
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2px;
-  text-align: center;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 1.2;
-  border: 3px solid #fff;
-}
-.warranty-badge svg {
-  width: 24px;
-  height: 24px;
-  margin-bottom: 2px;
-}
-.warranty-inner h2 {
-  color: #fff;
-  font-size: clamp(22px, 2.6vw, 28px);
-}
-.warranty-inner p {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 15px;
-  margin-top: 8px;
-  max-width: 480px;
-}
-.warranty-inner > div:nth-child(2) {
-  flex: 1;
-  min-width: 260px;
-}
-@media (max-width: 700px) {
-  .warranty-inner {
-    text-align: center;
-    justify-content: center;
-  }
-  .warranty-inner > div:nth-child(2) {
-    text-align: center;
-  }
-}
-
 /* ---------- Services ---------- */
 .svc-grid {
   display: grid;
@@ -722,7 +643,7 @@ header {
 /* ---------- Stats ---------- */
 .stat-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 .stat-card {
@@ -1167,21 +1088,6 @@ footer p.tag {
   font-size: 22px;
   margin-bottom: 20px;
 }
-.pricing-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-.pricing-row span:first-child {
-  font-size: 14.5px;
-  color: rgba(255, 255, 255, 0.78);
-}
-.pricing-row span:last-child {
-  font-weight: 700;
-  font-size: 15px;
-}
 .pricing-note {
   font-size: 12.5px;
   color: rgba(255, 255, 255, 0.5);
@@ -1260,41 +1166,6 @@ footer p.tag {
   .area-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-}
-
-/* ---------- Rating summary (reviews page) ---------- */
-.rating-summary {
-  padding: 56px 0;
-  background: var(--paper-soft);
-  border-bottom: 1px solid var(--line);
-}
-.rating-summary-inner {
-  display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.rating-stat {
-  text-align: center;
-}
-.rating-stat strong {
-  display: block;
-  font-family: "Bricolage Grotesque", sans-serif;
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 1;
-}
-.rating-stat span {
-  display: block;
-  font-size: 14px;
-  color: var(--ink-soft);
-  margin-top: 6px;
-}
-.rating-stars {
-  text-align: center;
-  margin-top: 28px;
-  font-size: 22px;
-  color: var(--cta);
 }
 
 /* ---------- Page CTA (shared bottom section) ---------- */

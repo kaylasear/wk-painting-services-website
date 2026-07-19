@@ -1,9 +1,11 @@
+import { withBase } from "../utils/url";
+
 export const SITE = {
   name: "WK Painting Services, LLC",
   phone: "(253) 906-1802",
   phoneHref: "tel:12539061802",
   email: "waynekhim@gmail.com",
-  estimateHref: "/#estimate",
-  tagline: "Tacoma & South Sound Exterior, Interior & Cabinet Painters",
-  hours: "Mon–Sat, 7am–6pm",
+  estimateHref: withBase("/#estimate"),
+  tagline: "Pierce County Exterior, Interior & Cabinet Painters",
+  hours: "Mon–Sun, Always Open",
 } as const;

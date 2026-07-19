@@ -9,10 +9,10 @@ import PageCTA from "../components/PageCTA.astro";
 import { SITE } from "../config/site";
 
 const stats = [
-  { value: "2012", label: "Year founded" },
-  { value: "1,200+", label: "Projects completed" },
-  { value: "4.9★", label: "Average rating" },
-  { value: "2-yr", label: "Workmanship warranty" },
+  { value: "2017", label: "Year founded" },
+  { value: "145+", label: "Projects completed" },
+  { value: "3", label: "Services offered" },
+  { value: "Family", label: "Owned & operated" },
 ];
 
 const values = [
@@ -34,31 +34,20 @@ const values = [
   },
 ];
 
-const serviceArea = [
-  "Tacoma",
-  "Gig Harbor",
-  "Puyallup",
-  "Lakewood",
-  "University Place",
-  "Federal Way",
-  "Auburn",
-  "Sumner",
-  "Fife",
-  "Milton",
-];
+const serviceArea = ["Tacoma", "Puyallup", "Bonney Lake", "Graham", "Spanaway"];
 ---
 
 <Layout
   title={`About Us | ${SITE.name}`}
-  description={`${SITE.name} is a locally owned exterior painting company serving Tacoma and the South Sound since 2012. Licensed, bonded, and dedicated to quality prep.`}
+  description={`${SITE.name} is a locally owned painting company serving Pierce County since 2017. Interior, exterior, and cabinet painting with a focus on precision and honest communication.`}
 >
   <TopNav currentPage="about" />
   <Header />
 
   <PageHero
     eyebrow="About Us"
-    heading="Locally owned since 2012."
-    body="WK Painting Services was built on the idea that exterior painting should be done once and done right. We're a small crew, not a franchise — and that's intentional."
+    heading="Locally owned since 2017."
+    body="WK Painting Services is a family-owned painting company built on precision and lasting quality — not quick, cut-corner work. We're a small crew, not a franchise, and that's intentional."
   />
 
   <section class="section">
@@ -66,25 +55,23 @@ const serviceArea = [
       <div class="content-split">
         <div class="fade-up">
           <p class="eyebrow">Our story</p>
-          <h2>Started in Tacoma, still in Tacoma.</h2>
+          <h2>Started in Pierce County, still here.</h2>
           <p class="story-body">
-            WK Painting Services started with a single truck and a belief that
-            prep work — not paint brand — is what makes a job last. The South
-            Sound is hard on paint: the rain, the humidity, the temperature
-            swings. Most paint failures aren't because the paint was cheap;
-            they're because the surface wasn't ready.
+            WK Painting Services is owned and operated by Wayne Khim, serving
+            Pierce County and the surrounding areas — including Tacoma,
+            Puyallup, Bonney Lake, Graham, and Spanaway. We specialize in
+            interior and exterior painting as well as cabinet painting and
+            refinishing, always with an emphasis on precision and lasting
+            quality over quick, cut-corner work.
           </p>
           <p class="story-body">
-            Over 14 years, we've painted more than 1,200 homes across Tacoma,
-            Gig Harbor, Puyallup, Lakewood, and University Place. We've kept the
-            same approach the whole time: show up on time, do thorough prep, use
-            quality materials, and don't leave until the client does a
-            walkthrough and is satisfied.
+            As a family business, we treat every job like it's our own home, and
+            we stand behind what we deliver. What sets us apart is the attention
+            to detail, backed by honest communication and a free quote.
           </p>
           <p class="story-body">
-            We're licensed and bonded in Washington State, and every project
-            comes with a 2-year workmanship warranty — not because we have to,
-            but because we're confident in the work.
+            Since 2017, we've painted more than 145 homes across Pierce County —
+            and we're just getting started.
           </p>
         </div>
         <div class="fade-up">
@@ -112,11 +99,11 @@ const serviceArea = [
                 ></path>
                 <path d="M9 12l2 2 4-4"></path>
               </svg>
-              <strong>Licensed &amp; bonded in Washington State</strong>
+              <strong>Licensed &amp; Insured</strong>
             </div>
             <p>
-              WA contractor license #WKPAI*123AB. Fully insured — general
-              liability and workers' compensation on every job.
+              WK Painting Services, LLC is licensed and insured, and takes on
+              residential projects only.
             </p>
           </div>
         </div>
@@ -150,10 +137,8 @@ const serviceArea = [
     <div class="wrap">
       <div class="section-head fade-up">
         <p class="eyebrow">Service area</p>
-        <h2>We serve the South Sound.</h2>
-        <p>
-          Based in Tacoma — we travel to wherever your home is in the region.
-        </p>
+        <h2>We serve Pierce County.</h2>
+        <p>Based in Tacoma — we travel to wherever your home is in the area.</p>
       </div>
       <div class="area-grid">
         {serviceArea.map((city) => <div class="area-chip">{city}</div>)}
@@ -164,7 +149,7 @@ const serviceArea = [
   <PageCTA
     variant="cta"
     heading="Let's talk about your project."
-    body="Free estimate, color consult included. We'll walk your exterior with you and give you a written quote with no obligation."
+    body="Free estimate, color consult included. We'll walk your project with you and give you a written quote with no obligation."
   >
     <a href={SITE.estimateHref} class="btn btn-dark">Get a Free Estimate</a>
     <a href={SITE.phoneHref} class="btn btn-ghost">Call {SITE.phone}</a>

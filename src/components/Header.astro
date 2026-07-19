@@ -1,11 +1,12 @@
 ---
 import LogoMark from "./LogoMark.astro";
 import { SITE } from "../config/site";
+import { withBase } from "../utils/url";
 ---
 
 <header>
   <div class="nav">
-    <a href="/" class="logo">
+    <a href={withBase("/")} class="logo">
       <LogoMark />
     </a>
     <div class="navcta">

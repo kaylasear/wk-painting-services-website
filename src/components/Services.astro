@@ -4,7 +4,7 @@ import { SITE } from "../config/site";
 const services = [
   {
     title: "Exterior Painting",
-    desc: "Siding, trim, doors, fascia, and decks — fully prepped, primed, and finished with paint rated for South Sound weather.",
+    desc: "Siding, trim, gutters, shutters, and doors — fully prepped and finished with paint built to handle sun, rain, and moisture.",
     icon: `<path d="M3 9l9-6 9 6"/><path d="M5 9v11h14V9"/><path d="M10 20v-6h4v6"/>`,
   },
   {
@@ -25,10 +25,7 @@ const services = [
     <div class="section-head fade-up">
       <p class="eyebrow">Services</p>
       <h2>What we do.</h2>
-      <p>
-        Three services, one crew, the same careful prep and 2-year warranty on
-        every job.
-      </p>
+      <p>Three services, one crew, the same careful prep on every job.</p>
     </div>
     <div class="svc-grid svc-grid--3col">
       {
@@ -48,7 +45,14 @@ const services = [
         ))
       }
     </div>
-    <div style="margin-top:36px;text-align:center;">
+    <p
+      style="margin-top:24px;text-align:center;color:var(--ink-soft);font-size:14.5px;"
+    >
+      Also available: deck staining, power washing, gutter painting, siding
+      repair, wood rot repair, garage door painting, fence painting, and stucco
+      painting.
+    </p>
+    <div style="margin-top:24px;text-align:center;">
       <a href={SITE.estimateHref} class="btn btn-cta">Get a Free Estimate</a>
     </div>
   </div>
