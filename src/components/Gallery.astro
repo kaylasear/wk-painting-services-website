@@ -1,68 +1,42 @@
 ---
+import { Image } from "astro:assets";
+import { byCategory } from "../utils/gallery";
+import { withBase } from "../utils/url";
 
+const featured = [
+  byCategory("exterior")[0],
+  byCategory("kitchen")[0],
+  byCategory("fence")[0],
+].filter(Boolean);
 ---
 
 <section class="section section-soft" id="gallery">
   <div class="wrap">
     <div class="section-head fade-up">
-      <p class="eyebrow">Color Library</p>
-      <h2>Palettes from recent projects.</h2>
+      <p class="eyebrow">Recent Work</p>
+      <h2>A look at recent projects.</h2>
       <p>
-        A few of the exterior combinations our color consultants have mixed for
-        Pierce County homes this season.
+        A few before-and-after shots from exterior, cabinet, and fence jobs
+        we've completed for Pierce County homes.
       </p>
     </div>
     <div class="gal-grid">
-      <div class="gal-card fade-up">
-        <svg
-          class="gal-art"
-          viewBox="0 0 400 200"
-          preserveAspectRatio="xMidYMid slice"
-        >
-          <rect width="400" height="200" fill="#BFD3E0"></rect>
-          <rect x="0" y="150" width="400" height="50" fill="#8C9A8E"></rect>
-          <polygon points="70,150 200,70 330,150" fill="#3E5C82"></polygon>
-          <rect x="100" y="100" width="200" height="50" fill="#3E5C82"></rect>
-          <rect x="185" y="115" width="30" height="35" fill="#2A2A28"></rect>
-        </svg>
-        <div class="gal-body">
-          <h3>Full Exterior — Proctor District</h3>
-          <p>Slate blue siding, charcoal door, soft white trim.</p>
-        </div>
-      </div>
-      <div class="gal-card fade-up">
-        <svg
-          class="gal-art"
-          viewBox="0 0 400 200"
-          preserveAspectRatio="xMidYMid slice"
-        >
-          <rect width="400" height="200" fill="#E7E2D6"></rect>
-          <rect x="0" y="0" width="400" height="60" fill="#C9C2B2"></rect>
-          <rect x="30" y="70" width="150" height="110" fill="#C1602E"></rect>
-          <rect x="200" y="70" width="170" height="110" fill="#2A2A28"></rect>
-        </svg>
-        <div class="gal-body">
-          <h3>Trim &amp; Shutters — North Tacoma</h3>
-          <p>Clay front door, charcoal shutters, original siding kept.</p>
-        </div>
-      </div>
-      <div class="gal-card fade-up">
-        <svg
-          class="gal-art"
-          viewBox="0 0 400 200"
-          preserveAspectRatio="xMidYMid slice"
-        >
-          <rect width="400" height="200" fill="#EFE7DA"></rect>
-          <rect x="0" y="0" width="400" height="50" fill="#9CA8A0"></rect>
-          <rect x="0" y="130" width="400" height="70" fill="#6E4B3A"></rect>
-          <rect x="40" y="50" width="320" height="80" fill="#D8CDBC"></rect>
-          <rect x="160" y="50" width="20" height="150" fill="#9CA8A0"></rect>
-        </svg>
-        <div class="gal-body">
-          <h3>Deck Stain &amp; Railing — Bonney Lake</h3>
-          <p>Warm walnut deck stain with weathered-gray railings.</p>
-        </div>
-      </div>
+      {
+        featured.map((photo) => (
+          <div class="gal-card fade-up">
+            <Image
+              src={photo.image}
+              alt={photo.alt}
+              class="gal-photo"
+              widths={[400, 800]}
+              sizes="(max-width: 880px) 100vw, 33vw"
+            />
+          </div>
+        ))
+      }
+    </div>
+    <div style="margin-top:36px;text-align:center;">
+      <a href={withBase("/gallery")} class="btn btn-ghost">See full gallery</a>
     </div>
   </div>
 </section>

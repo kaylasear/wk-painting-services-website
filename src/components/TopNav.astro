@@ -17,6 +17,18 @@ const { currentPage = "" } = Astro.props;
         >Exterior Painting</a
       >
       <a
+        href={withBase("/interior-painting")}
+        class={currentPage === "interior" ? "active" : ""}>Interior Painting</a
+      >
+      <a
+        href={withBase("/cabinet-painting")}
+        class={currentPage === "cabinet" ? "active" : ""}>Cabinet Painting</a
+      >
+      <a
+        href={withBase("/gallery")}
+        class={currentPage === "gallery" ? "active" : ""}>Gallery</a
+      >
+      <a
         href={withBase("/reviews")}
         class={currentPage === "reviews" ? "active" : ""}>Reviews</a
       >

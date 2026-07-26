@@ -11,73 +11,63 @@ import { SITE } from "../config/site";
 import { byCategory } from "../utils/gallery";
 import { withBase } from "../utils/url";
 
-const exteriorPhotos = [...byCategory("exterior"), ...byCategory("fence")];
+const kitchenPhotos = byCategory("kitchen");
 
 const services = [
   {
-    title: "Exterior Siding",
-    desc: "Full prep, prime, and two coats on any siding type — wood, Hardie board, vinyl, stucco, or T1-11. Rated for Pacific Northwest weather.",
-    icon: `<path d="M3 9l9-6 9 6"/><path d="M5 9v11h14V9"/><path d="M10 20v-6h4v6"/>`,
+    title: "Cabinet Doors & Drawers",
+    desc: "Every door and drawer front is removed, labeled, and sprayed off-site or in a controlled area for a smooth, factory-level finish.",
+    icon: `<rect x="4" y="3" width="16" height="18" rx="1"/><path d="M4 11h16"/><circle cx="8" cy="7" r="0.6" fill="currentColor"/><circle cx="8" cy="16" r="0.6" fill="currentColor"/>`,
   },
   {
-    title: "Trim & Fascia",
-    desc: "Clean lines on every board, window casing, and soffit. We mask meticulously so trim color never bleeds onto siding.",
-    icon: `<rect x="2" y="3" width="20" height="4" rx="1"/><rect x="2" y="10" width="20" height="4" rx="1"/><rect x="2" y="17" width="20" height="4" rx="1"/>`,
+    title: "Boxes & Frames",
+    desc: "Cabinet boxes and face frames are cleaned, deglossed, and coated in place with careful masking of counters, floors, and appliances.",
+    icon: `<rect x="3" y="4" width="18" height="16" rx="1"/><path d="M3 10h18"/>`,
   },
   {
-    title: "Gutters",
-    desc: "Repainting gutters prevents rust and keeps them blending seamlessly with your home's color scheme.",
-    icon: `<path d="M3 6h18"/><path d="M6 6v4a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V6"/><path d="M12 13v7"/><path d="M9 17l3 3 3-3"/>`,
+    title: "Islands & Built-ins",
+    desc: "Kitchen islands, pantries, and built-in cabinetry are matched to the rest of the kitchen for a consistent, cohesive look.",
+    icon: `<path d="M3 21h18"/><rect x="6" y="9" width="12" height="12" rx="1"/><path d="M9 9V5a3 3 0 0 1 6 0v4"/>`,
   },
   {
-    title: "Shutters",
-    desc: "Whether decorative or functional, shutters get careful prep and coating to hold up against sun fade and moisture over time.",
-    icon: `<rect x="3" y="3" width="7" height="18" rx="1"/><rect x="14" y="3" width="7" height="18" rx="1"/>`,
+    title: "Hardware Removal & Reinstall",
+    desc: "Hinges, pulls, and knobs are removed before painting and reinstalled after — or upgraded to new hardware if you'd like a refresh.",
+    icon: `<circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/>`,
   },
   {
-    title: "Front Doors & Entries",
-    desc: "A fresh door makes the whole house. We hand-paint for a factory-smooth finish and add weather-resistant topcoat to stand up to daily use.",
-    icon: `<rect x="3" y="2" width="18" height="20" rx="1"/><circle cx="16" cy="12" r="1.5" fill="currentColor"/>`,
+    title: "Spray-Finish Process",
+    desc: "We spray rather than brush cabinets for an even, durable coat that resists chipping better than a roller or brush finish.",
+    icon: `<path d="M3 12h4l3-3 4 4 3-3h4"/><circle cx="19" cy="6" r="1.5" fill="currentColor"/>`,
   },
   {
-    title: "Decks & Fences",
-    desc: "Solid stains or semi-transparent finishes that protect wood grain while adding lasting color. Includes light sanding and cleaning.",
-    icon: `<path d="M3 21h18"/><path d="M5 17V8"/><path d="M9 17V8"/><path d="M13 17V8"/><path d="M17 17V8"/><path d="M3 8h18"/>`,
-  },
-  {
-    title: "Garage Doors",
-    desc: "We restore faded or peeling garage doors to match the new exterior. Proper adhesion prep so paint doesn't chip when the door cycles.",
-    icon: `<rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 10h20M2 14h20"/>`,
-  },
-  {
-    title: "Power Washing",
-    desc: "Every job starts with a thorough wash to remove mildew, dirt, and chalking — so new paint bonds properly and lasts longer.",
-    icon: `<path d="M7 16.5c0 1.38 2.24 2.5 5 2.5s5-1.12 5-2.5"/><path d="M12 7v5"/><path d="M8 9l4-4 4 4"/>`,
+    title: "Color Matching & Consult",
+    desc: "Not sure what color fits your kitchen? We help you choose a finish that works with your counters, floors, and existing fixtures.",
+    icon: `<path d="M12 3a9 9 0 1 0 0 18c1.5 0 2-1 2-2 0-.6-.3-1-.6-1.4-.3-.4-.6-.8-.6-1.3 0-1 .8-1.8 1.8-1.8H17a3 3 0 0 0 3-3c0-5-3.5-8.5-8-8.5z"/><circle cx="7.5" cy="10.5" r="1" fill="currentColor"/><circle cx="10.5" cy="7" r="1" fill="currentColor"/>`,
   },
 ];
 
 const included = [
-  "Full power wash before any paint is applied",
-  "Scraping and sanding of loose or peeling areas",
-  "Caulking gaps at trim, windows, and seams",
-  "Spot-prime on bare wood and repaired areas",
-  "Two finish coats of weather-rated exterior paint",
-  "Daily cleanup — no tools, no tape left behind",
+  "Removal, labeling, and reinstall of all doors, drawers, and hardware",
+  "Full degreasing and deglossing before any primer goes on",
+  "Sanding and filling of dents, dings, or old hardware holes",
+  "Bonding primer built for cabinetry, not wall paint",
+  "Sprayed finish coats for a smooth, durable, factory-style result",
+  "Masking and protection of counters, floors, and appliances",
   "Final walkthrough with you before we close out",
 ];
 ---
 
 <Layout
-  title={`Exterior Painting | ${SITE.name}`}
-  description="Professional exterior painting in Pierce County. Siding, trim, gutters, shutters, doors, and more. Free estimates."
+  title={`Cabinet Painting | ${SITE.name}`}
+  description="Professional kitchen cabinet painting in Pierce County. Spray-finished doors, boxes, and drawers for a factory-smooth result. Free estimates."
 >
-  <TopNav currentPage="residential" />
+  <TopNav currentPage="cabinet" />
   <Header />
 
   <PageHero
-    eyebrow="Exterior Painting"
-    heading="Your home's exterior,<br />done right."
-    body="From full re-sides to a single front door — WK Painting Services handles every exterior job with the same careful prep and the same experienced crew."
+    eyebrow="Cabinet Painting"
+    heading="Cabinets that look<br />replaced, not repainted."
+    body="From a single kitchen island to a full cabinet re-color, WK Painting Services sprays every door, drawer, and frame for a smooth, lasting finish."
   >
     <div class="hero-actions">
       <a href={SITE.estimateHref} class="btn btn-cta">Get a Free Estimate</a>
@@ -88,11 +78,11 @@ const included = [
   <section class="section">
     <div class="wrap">
       <div class="section-head fade-up">
-        <p class="eyebrow">What we paint</p>
-        <h2>Every surface, handled.</h2>
+        <p class="eyebrow">What we do</p>
+        <h2>Every step, handled with care.</h2>
         <p>
-          We scope each project in detail up front, so nothing gets missed once
-          work begins.
+          Cabinets take more prep than walls — we scope each kitchen in detail
+          before any paint goes on.
         </p>
       </div>
       <div class="svc-grid svc-grid--3col">
@@ -163,12 +153,12 @@ const included = [
     <div class="wrap">
       <div class="section-head fade-up">
         <p class="eyebrow">Recent Work</p>
-        <h2>Exterior &amp; fence projects.</h2>
-        <p>A sample of exterior and fence painting jobs completed recently.</p>
+        <h2>Kitchen cabinet projects.</h2>
+        <p>A sample of recent cabinet painting jobs.</p>
       </div>
       <div class="gal-grid">
         {
-          exteriorPhotos.slice(0, 6).map((photo) => (
+          kitchenPhotos.map((photo) => (
             <div class="gal-card fade-up">
               <Image
                 src={photo.image}
@@ -190,7 +180,7 @@ const included = [
 
   <PageCTA
     variant="cta"
-    heading="Ready to refresh your exterior?"
+    heading="Ready to update your kitchen?"
     body="We schedule estimates within 2–3 days. No obligation, no pressure, and a color consult is always included."
   >
     <a href={SITE.estimateHref} class="btn btn-dark">Get My Free Estimate</a>
