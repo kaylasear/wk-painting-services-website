@@ -2,6 +2,6 @@
   "name": "wk-painting-services-website",
   "compatibility_date": "2026-07-25",
   "assets": {
-    "directory": "dist",
-  },
+    "directory": "dist"
+  }
 }
