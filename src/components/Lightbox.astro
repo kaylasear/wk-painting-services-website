@@ -1,0 +1,90 @@
+---
+
+---
+
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox-close" type="button" aria-label="Close"
+    >&times;</button
+  >
+  <div class="lightbox-inner">
+    <img class="lightbox-img" alt="" />
+  </div>
+</div>
+
+<style>
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 40px;
+    cursor: zoom-out;
+  }
+  .lightbox[hidden] {
+    display: none;
+  }
+  .lightbox-inner {
+    max-width: 90vw;
+    max-height: 90vh;
+  }
+  .lightbox-img {
+    display: block;
+    max-width: 90vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    border-radius: var(--radius);
+    cursor: default;
+  }
+  .lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 34px;
+    line-height: 1;
+    cursor: pointer;
+  }
+</style>
+
+<script>
+  function initLightbox() {
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg =
+      lightbox?.querySelector<HTMLImageElement>(".lightbox-img");
+    const closeBtn =
+      lightbox?.querySelector<HTMLButtonElement>(".lightbox-close");
+    if (!lightbox || !lightboxImg || !closeBtn) return;
+
+    const open = (img: HTMLImageElement) => {
+      lightboxImg.src = img.currentSrc || img.src;
+      lightboxImg.srcset = img.srcset || "";
+      lightboxImg.alt = img.alt || "";
+      lightbox.hidden = false;
+      document.body.style.overflow = "hidden";
+    };
+    const close = () => {
+      lightbox.hidden = true;
+      document.body.style.overflow = "";
+    };
+
+    document.querySelectorAll<HTMLImageElement>(".gal-photo").forEach((img) => {
+      img.addEventListener("click", () => open(img));
+    });
+    closeBtn.addEventListener("click", close);
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) close();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") close();
+    });
+  }
+
+  initLightbox();
+  document.addEventListener("astro:page-load", initLightbox);
+</script>

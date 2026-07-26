@@ -738,8 +738,13 @@ header {
 .gal-photo {
   display: block;
   width: 100%;
-  height: 220px;
+  height: 280px;
   object-fit: cover;
+  cursor: zoom-in;
+  transition: transform 0.2s ease;
+}
+.gal-photo:hover {
+  transform: scale(1.03);
 }
 .gal-body {
   padding: 18px 20px;
