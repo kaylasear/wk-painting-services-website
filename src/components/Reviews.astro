@@ -4,36 +4,51 @@ export interface Props {
 }
 const { limit } = Astro.props;
 
-const allReviews = [
+interface Review {
+  text: string;
+  name: string;
+  location?: string;
+}
+
+const allReviews: Review[] = [
   {
-    text: "Our full exterior repaint was done in three days, and they covered every plant in the yard before starting. Came home to a clean driveway every night.",
-    name: "Sarah M.",
-    location: "Proctor District",
+    text: "It is our pleasure to recommend Wayne as a professional and reliable painter. When painting our home, we appreciated his attention to detail and his creative eye for paint color suggestions that we may not have thought of. Wayne shows pride in his craftsmanship and sincerely wants to provide the best results for his customers. The project was completed in a timely manner, and our home looks beautiful!",
+    name: "Janelle & Mike M.",
+    location: "Bonney Lake, WA",
   },
   {
-    text: "They scraped and primed spots I didn't even realize were a problem before painting. Two years later the siding still looks brand new.",
-    name: "James T.",
-    location: "North Tacoma",
+    text: "I want to thank WK Painting for the outstanding work painting my house (inside and outside) and shed. Their quality of work, delivery of service, and price exceeded my expectations. They were very easy to work with and had valuable suggestions throughout the process. I would highly recommend their services and know you will be as satisfied as we have been.",
+    name: "Todd K.",
   },
   {
-    text: "Got our deck stained and the trim repainted in the same visit. The estimate matched the final invoice exactly, which I wasn't expecting.",
-    name: "Dana R.",
-    location: "Bonney Lake",
+    text: "If you are looking for professionalism and high-quality workmanship, Wayne Khim is the painter to choose. His artistic eye for color, attention to detail, communication, and desire for customer satisfaction is very apparent. His preparation of your home prior to painting is notable, and because he uses high-quality paint, the final results will be impressive! Wayne is incredibly hard working and will leave your home looking refreshed and beautiful!",
+    name: "Jim & Vonnie R.",
+    location: "Lake Tapps, WA",
   },
   {
-    text: "From the color consult to the final walkthrough, everything was professional and on schedule. The crew cleaned up every evening — no mess left behind.",
-    name: "Marcus L.",
-    location: "Graham",
+    text: "Wayne did an extremely good job painting my home — he's a perfectionist, and the home looked brand new when he was finished. I've seen other homes painted by different companies in my neighborhood, and the quality isn't nearly as good as the work Wayne does. I've referred Wayne to several of my friends and they've all been extremely happy with the quality of his work.",
+    name: "Tom H.",
+    location: "Puyallup, WA",
   },
   {
-    text: "We had a tricky split-level with lots of trim detail. WK took the time to mask everything perfectly. The result looks better than when the house was new.",
-    name: "Theresa K.",
-    location: "Puyallup",
+    text: "We contacted Wayne Khim and he came out the next day and gave us a very reasonable quote, explaining what he would do, the products he was using, and the timeline. Wayne completed the painting within the timeline he quoted, and the interior paint job turned out fantastic. We were so impressed that we also had our kitchen cabinets painted by WK Painting — Wayne again outdid himself with excellent results. Wayne was a perfectionist and did not stop until it met his approval.",
+    name: "Roger & Sue L.",
+    location: "Tacoma, WA",
   },
   {
-    text: "Called on a Tuesday, had an estimate Thursday, paint done the following week. Fast, fair price, and they even touched up a spot I noticed after they left.",
-    name: "Brian O.",
-    location: "Spanaway",
+    text: "I had the pleasure of hiring Wayne to paint the exterior of my home, and I was thoroughly impressed with the quality of work, attention to detail, and professionalism displayed throughout the entire project. My house is extremely old and required a high degree of attention to detail — the quality of the paint job exceeded my expectations. The lines were clean, surfaces were properly prepped, and the final finish was flawless.",
+    name: "Amanda G.",
+    location: "Puyallup, WA",
+  },
+  {
+    text: 'Wayne Khim painted our home\'s exterior. His knowledge of paint quality and color was immediately apparent, and we seriously appreciated his suggestions, work ethic, and flexibility. Our home is elevated on a hillside, so much of it had to be painted from a ladder at awkward angles. It was a welcome confirmation when our siding contractors kept pulling us aside to say, "This painter does excellent work!"',
+    name: "S. Ogle",
+    location: "Tacoma, WA",
+  },
+  {
+    text: "You recently painted our house, shed, and front porch, and we wanted to let you know how pleased we are with the results. They all look beautiful — like a new house! You gave us options so we could select something that fit our budget, and we really appreciated how reliable you were. If you said you'd be here on a particular day at a particular time, that's when you'd arrive.",
+    name: "Jack & Cindy M.",
+    location: "Puyallup, WA",
   },
 ];
 
@@ -47,7 +62,7 @@ const reviews = limit ? allReviews.slice(0, limit) : allReviews;
         <div class="rev-stars">★★★★★</div>
         <p>"{r.text}"</p>
         <div class="rev-name">
-          {r.name} — {r.location}
+          {r.location ? `${r.name} — ${r.location}` : r.name}
         </div>
       </div>
     ))

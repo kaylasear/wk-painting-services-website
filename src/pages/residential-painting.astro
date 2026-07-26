@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import TopNav from "../components/TopNav.astro";
 import Header from "../components/Header.astro";
@@ -7,6 +8,10 @@ import MobileCTA from "../components/MobileCTA.astro";
 import PageHero from "../components/PageHero.astro";
 import PageCTA from "../components/PageCTA.astro";
 import { SITE } from "../config/site";
+import { byCategory } from "../utils/gallery";
+import { withBase } from "../utils/url";
+
+const exteriorPhotos = [...byCategory("exterior"), ...byCategory("fence")];
 
 const services = [
   {
@@ -150,6 +155,35 @@ const included = [
             >
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head fade-up">
+        <p class="eyebrow">Recent Work</p>
+        <h2>Exterior &amp; fence projects.</h2>
+        <p>A sample of exterior and fence painting jobs completed recently.</p>
+      </div>
+      <div class="gal-grid">
+        {
+          exteriorPhotos.slice(0, 6).map((photo) => (
+            <div class="gal-card fade-up">
+              <Image
+                src={photo.image}
+                alt={photo.alt}
+                class="gal-photo"
+                widths={[400, 800]}
+                sizes="(max-width: 880px) 100vw, 33vw"
+              />
+            </div>
+          ))
+        }
+      </div>
+      <div style="margin-top:36px;text-align:center;">
+        <a href={withBase("/gallery")} class="btn btn-ghost">See full gallery</a
+        >
       </div>
     </div>
   </section>

@@ -1,0 +1,101 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import TopNav from "../components/TopNav.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import MobileCTA from "../components/MobileCTA.astro";
+import PageHero from "../components/PageHero.astro";
+import PageCTA from "../components/PageCTA.astro";
+import Lightbox from "../components/Lightbox.astro";
+import { SITE } from "../config/site";
+import { galleryPhotos } from "../utils/gallery";
+
+const filters = [
+  { key: "all", label: "All" },
+  { key: "exterior", label: "Exterior" },
+  { key: "fence", label: "Fence" },
+  { key: "kitchen", label: "Cabinets" },
+];
+---
+
+<Layout
+  title={`Gallery | ${SITE.name}`}
+  description="Photos from recent exterior, fence, and cabinet painting projects completed by WK Painting Services in Pierce County."
+>
+  <TopNav currentPage="gallery" />
+  <Header />
+
+  <PageHero
+    eyebrow="Gallery"
+    heading="Recent project photos."
+    body="A collection of exterior, fence, and cabinet painting jobs we've completed around Pierce County."
+  />
+
+  <section class="section">
+    <div class="wrap">
+      <div class="gal-filters" role="group" aria-label="Filter by category">
+        {
+          filters.map((f) => (
+            <button
+              type="button"
+              class="gal-filter-btn"
+              class:list={[f.key === "all" && "active"]}
+              data-filter={f.key}
+            >
+              {f.label}
+            </button>
+          ))
+        }
+      </div>
+      <div class="gal-grid" id="gal-grid">
+        {
+          galleryPhotos.map((photo) => (
+            <div class="gal-card fade-up" data-category={photo.category}>
+              <Image
+                src={photo.image}
+                alt={photo.alt}
+                class="gal-photo"
+                widths={[400, 800]}
+                sizes="(max-width: 880px) 100vw, 33vw"
+              />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <PageCTA
+    variant="dark"
+    eyebrow="Get Started"
+    heading="Like what you see?"
+    body="Free estimate, color consult included, no pressure."
+  >
+    <a href={SITE.estimateHref} class="btn btn-cta">Request a Free Estimate</a>
+  </PageCTA>
+
+  <Footer />
+  <MobileCTA />
+  <Lightbox />
+
+  <script>
+    const buttons =
+      document.querySelectorAll<HTMLButtonElement>(".gal-filter-btn");
+    const cards = document.querySelectorAll<HTMLDivElement>(
+      "#gal-grid .gal-card",
+    );
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        buttons.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        const filter = btn.dataset.filter;
+        cards.forEach((card) => {
+          const match = filter === "all" || card.dataset.category === filter;
+          card.hidden = !match;
+        });
+      });
+    });
+  </script>
+</Layout>
