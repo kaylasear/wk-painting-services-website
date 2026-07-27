@@ -1,0 +1,169 @@
+---
+
+---
+
+<section class="section section-soft review-form-section">
+  <div class="wrap">
+    <div class="review-form-card fade-up">
+      <div class="section-head">
+        <p class="eyebrow">Share Your Experience</p>
+        <h2>Leave us a review.</h2>
+        <p>
+          Had a great experience with WK Painting Services? We'd love to hear
+          about it.
+        </p>
+      </div>
+
+      <form id="reviewForm">
+        <input
+          type="hidden"
+          name="access_key"
+          value={import.meta.env.PUBLIC_WEB3FORMS_KEY}
+        />
+        <input
+          type="hidden"
+          name="subject"
+          value="New customer review submission"
+        />
+        <input type="hidden" name="from_name" value="WK Painting Services" />
+        <input
+          type="checkbox"
+          name="botcheck"
+          class="hp-field"
+          tabindex="-1"
+          autocomplete="off"
+        />
+        <div class="est-row">
+          <div class="field">
+            <label for="revFirstName">First name</label>
+            <input id="revFirstName" name="firstName" type="text" required />
+          </div>
+          <div class="field">
+            <label for="revLastInitial">Last initial</label>
+            <input
+              id="revLastInitial"
+              name="lastInitial"
+              type="text"
+              maxlength="1"
+              placeholder="e.g. K"
+              required
+            />
+          </div>
+        </div>
+        <div class="est-row">
+          <div class="field">
+            <label for="revEmail">Email</label>
+            <input id="revEmail" name="email" type="email" required />
+          </div>
+          <div class="field">
+            <label for="revLocation">City (optional)</label>
+            <input
+              id="revLocation"
+              name="location"
+              type="text"
+              placeholder="e.g. Puyallup, WA"
+            />
+          </div>
+        </div>
+        <div class="field">
+          <label for="revRating">Rating</label>
+          <select id="revRating" name="rating" required>
+            <option value="5 stars">★★★★★ — Excellent</option>
+            <option value="4 stars">★★★★ — Good</option>
+            <option value="3 stars">★★★ — Average</option>
+            <option value="2 stars">★★ — Below Average</option>
+            <option value="1 star">★ — Poor</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="revText">Your review</label>
+          <textarea
+            id="revText"
+            name="review"
+            placeholder="Tell us about your project and experience"
+            required></textarea>
+        </div>
+        <button type="submit" class="btn btn-cta">Submit Review</button>
+        <p class="form-note">
+          By submitting, you agree we may feature your review on our website.
+        </p>
+        <p id="reviewFormError" class="form-error">
+          Something went wrong sending your review. Please try again, or email
+          us directly.
+        </p>
+      </form>
+      <div id="reviewFormSuccess">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+        >
+          <circle cx="12" cy="12" r="10"></circle><path d="M8 12l3 3 5-6"
+          ></path>
+        </svg>
+        <h3>Thanks for the feedback!</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .review-form-card .btn-cta {
+    display: flex;
+    margin: 0 auto;
+  }
+</style>
+
+<script>
+  const form = document.getElementById("reviewForm") as HTMLFormElement;
+  const success = document.getElementById("reviewFormSuccess") as HTMLElement;
+  const error = document.getElementById("reviewFormError") as HTMLElement;
+  const submitBtn = form?.querySelector(
+    'button[type="submit"]',
+  ) as HTMLButtonElement;
+
+  if (form && success && error && submitBtn) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      error.style.display = "none";
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending…";
+
+      try {
+        const payload = Object.fromEntries(new FormData(form)) as Record<
+          string,
+          string
+        >;
+        const firstName = payload.firstName?.trim() ?? "";
+        const lastInitial = payload.lastInitial?.trim().charAt(0) ?? "";
+        payload.name = lastInitial
+          ? `${firstName} ${lastInitial.toUpperCase()}.`
+          : firstName;
+        delete payload.firstName;
+        delete payload.lastInitial;
+
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(payload),
+        });
+        const result = await response.json();
+
+        if (result.success) {
+          form.style.display = "none";
+          success.style.display = "block";
+        } else {
+          throw new Error(result.message || "Submission failed");
+        }
+      } catch {
+        error.style.display = "block";
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Submit Review";
+      }
+    });
+  }
+</script>
