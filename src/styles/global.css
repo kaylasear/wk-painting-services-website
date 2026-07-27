@@ -798,6 +798,51 @@ header {
   }
 }
 
+/* ---------- Review submission form ---------- */
+.review-form-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: var(--shadow);
+  max-width: 720px;
+  margin: 0 auto;
+}
+.review-form-card .section-head {
+  max-width: none;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.review-form-card .section-head p {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 480px;
+}
+#reviewFormSuccess {
+  display: none;
+  text-align: center;
+  padding: 30px 10px;
+}
+#reviewFormSuccess svg {
+  width: 46px;
+  height: 46px;
+  color: var(--accent);
+  margin: 0 auto 14px;
+}
+#reviewFormSuccess h3 {
+  font-size: 19px;
+  margin-bottom: 8px;
+}
+#reviewFormSuccess p {
+  color: var(--ink-soft);
+  font-size: 14.5px;
+}
+@media (max-width: 640px) {
+  .review-form-card {
+    padding: 26px;
+  }
+}
+
 /* ---------- Estimate form ---------- */
 .estimate {
   background: var(--ink);
