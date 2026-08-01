@@ -39,15 +39,8 @@
             <input id="revFirstName" name="firstName" type="text" required />
           </div>
           <div class="field">
-            <label for="revLastInitial">Last initial</label>
-            <input
-              id="revLastInitial"
-              name="lastInitial"
-              type="text"
-              maxlength="1"
-              placeholder="e.g. K"
-              required
-            />
+            <label for="revLastName">Last name</label>
+            <input id="revLastName" name="lastName" type="text" required />
           </div>
         </div>
         <div class="est-row">
@@ -136,12 +129,10 @@
           string
         >;
         const firstName = payload.firstName?.trim() ?? "";
-        const lastInitial = payload.lastInitial?.trim().charAt(0) ?? "";
-        payload.name = lastInitial
-          ? `${firstName} ${lastInitial.toUpperCase()}.`
-          : firstName;
+        const lastName = payload.lastName?.trim() ?? "";
+        payload.name = lastName ? `${firstName} ${lastName}` : firstName;
         delete payload.firstName;
-        delete payload.lastInitial;
+        delete payload.lastName;
 
         const response = await fetch("https://api.web3forms.com/submit", {
           method: "POST",
