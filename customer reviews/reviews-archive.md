@@ -1,0 +1,171 @@
+# Customer Reviews Archive
+
+All customer testimonials currently featured on the site, consolidated into one document. These match the `allReviews` array in
+`src/components/Reviews.astro`, which is the source of truth for what
+displays live — this file is a readable reference/archive copy.
+
+---
+
+## Janelle & Mike McNabb — Bonney Lake, WA
+
+It is our pleasure to recommend Wayne as a professional and reliable painter.
+When painting our home, we appreciated his attention to detail and his
+creative eye for paint color suggestions that we may not have thought of.
+Wayne shows pride in his craftmanship and sincerely wants to provide the best
+results for his customers. The project was completed in a timely manner, and
+our home looks beautiful!
+
+---
+
+## Todd Keller
+
+I want to thank WK Painting for the outstanding work painting my house
+(inside and outside) and shed. Their quality of work, delivery of service,
+and price exceeded my expectations. They were very easy to work with and had
+valuable suggestions throughout the process. I would highly recommend their
+services and know you will be as satisfied as we have been.
+
+---
+
+## Jim & Vonnie R. — Lake Tapps, WA
+
+If you are looking for professionalism and high-quality workmanship, Wayne
+Khim is the painter to choose. His artistic eye for color, attention to
+detail, communication, and desire for customer satisfaction is very
+apparent. His preparation of your home prior to painting is notable, and
+because he uses high-quality paint, the final results will be impressive!
+Wayne is incredibly hard working and will leave your home looking refreshed
+and beautiful!
+
+---
+
+## Tom H. — Puyallup, WA
+
+Wayne painted my home several years ago. He is the 2nd person who did some
+painting for me. My home still looks great. I would say Wayne did an
+extremely good job at painting my home. He is a perfectionist and the home
+looked brand new when he was finished. I have seen other homes painted by
+different companies in my neighborhood and they quality is not nearly as
+good as the work the Wayne does. I have referred Wayne to some of my friends
+and they have all been extremely happy with the quality of work that he
+does. The next time I need painting I am going to call Wayne.
+
+---
+
+## Roger & Sue L. — Tacoma, WA
+
+My wife and I were looking for a painter to paint the interior of our house.
+Some family friends said they were having their interior painted and
+recommended WK Painting. We contacted Wayne Khim and he came out the next
+day and gave us a very reasonable quote. Explained what he would do,
+products he was using, and what the time line and schedule would be. We
+agreed, Wayne completed the painting within the time line he quoted. Wayne
+was very communitive through the whole process and the interior paint job
+turned out fantastic. We were so impressed that we also had our kitchen
+cabinets painted by WK painting. Wayne again out did himself with excellent
+results. Wayne was always in communication with us throughout the process,
+even letting us know when he was going to lunch and when he would return.
+Wayne was a perfectionist and did not stop until it met his approval. We
+trusted Wayne and left him the code to our alarm so he could work while we
+were out of town and always felt we could trust Wayne. Wayne did excellent
+work and we are very pleased with the results.
+
+---
+
+## Amanda G. — Puyallup, WA
+
+I am writing to enthusiastically recommend Wayne Khim as a highly skilled
+and reliable house painter. I had the pleasure of hiring him to paint the
+exterior of my home in May of 2025, and I was thoroughly impressed with the
+quality of work, attention to detail, and professionalism displayed
+throughout the entire project. From the start, Wayne was punctual,
+communicative, and clear about the scope of work, materials needed, and
+timeline. He provided a fair and transparent estimate and worked diligently
+to stay within budget and time constraints. My house is extremely old and
+required a high degree of attention to detail. The quality of the paint job
+exceeded my expectations — the lines were clean, surfaces were properly
+prepped, and the final finish was flawless. Beyond the technical aspects,
+Wayne was respectful of my home, kept the work area tidy, and was always
+courteous. It was clear to me that he takes great pride in his work and is
+committed to delivering the best possible results. I would not hesitate to
+hire him again for future projects and wholeheartedly recommend Wayne Khim
+to anyone in need of a dependable, high-quality house painter.
+
+---
+
+## S. Ogle — Tacoma, WA
+
+Wayne Khim painted our home's exterior in the Fall of 2025. His knowledge of
+paint quality and color was immediately apparent, and we seriously
+appreciated his suggestions, work ethic, and flexibility. Our home is
+elevated on a hillside, so much of it had to be painted from a ladder at
+awkward angles. Our siding was being replaced, and the threat of bad weather
+meant Wayne was painting as fast as the siding was installed. It was a
+welcome confirmation when our siding contractors kept pulling us aside to
+say, "This painter does excellent work!" Wayne was a good communicator, was
+prompt, and often provided photos to demonstrate his progress. I have, and
+will continue to, recommend Wayne Khim Painting to family, friends, and
+neighbors.
+
+_(Previously duplicated across "S Ogle Review.txt" and "Wayne Khim Painting
+review for website.docx" — merged here.)_
+
+---
+
+## Jack & Cindy Morris — Puyallup, WA
+
+You recently painted our house, shed and front porch and my wife and I
+wanted to let you know how pleased we are with the results. They all look
+beautiful. Like a new house! Visitors have commented on the color choices
+and the accent color on the doors.
+
+You are a highly skilled painter (and craftsman) and we appreciated your
+guidance when selecting the paint to use for the different applications. You
+gave us options so that we could select something that fit our budget.
+
+We also really appreciated the fact that you were so reliable. If you said
+you would be here on a particular day at a particular time, that is when you
+would arrive. You don't find that quality in a lot of contractors these
+days.
+
+You are a perfectionist and it shows. Where it needed priming, scraping,
+sanding, caulking or repairing before painting, you took care of it and
+because of that I'm sure we won't have to paint again for many years.
+
+---
+
+## Judy D. & Joe T.
+
+Wayne and his wife painted our house and we couldn't be more pleased. We
+were out of town while it was done, and they sent many pictures and videos
+as the job progressed. Our house was in rather poor shape and he took on
+each challenge masterfully! The outcome is amazing and many neighbors and
+friends all want him to paint for them.
+
+---
+
+## Kevin O.
+
+Wayne at WK Painting Services did a fantastic job from start to finish. The
+quality of the work was top-notch, everything was completed quickly, and the
+finished result was exactly what we expected. I wouldn't hesitate to
+recommend WK Painting Services to anyone looking for professional, reliable
+painters. Thank you Wayne!
+
+---
+
+## Jack R. — Goodyear, AZ
+
+I give my highest recommendation to Wayne Khim Painting Services. In June of
+2025 WK Painting services painting to entire inside of our 2200 square foot
+house. Wayne offered me choices in the quality of paint I wanted him to use.
+I like options. We chose a quality paint, not the most expensive. Wayne took
+great care to protect the wood trim along the windows and baseboards. The
+paint covered wonderfully. You could not see any lines anywhere. Wayne also
+suggested we paint our front door and new color. Glossy Black with new
+hardware. The finished product really made a great statement and a great
+first impression. Wayne also offered to help me with a patch repair on my
+concrete foundation of the house. It also turned out great, like brand new.
+Wayne has wealth of knowledge to draw from. He is a very skilled worker and
+very easy to work worth. You cannot go wrong when choosing Wayne Khim
+Painting services.
